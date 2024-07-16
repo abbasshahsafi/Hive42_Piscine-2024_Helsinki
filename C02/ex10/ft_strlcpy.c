@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashahsaf <ashahsaf@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 14:30:00 by ashahsaf          #+#    #+#             */
-/*   Updated: 2024/07/16 14:30:00 by ashahsaf         ###   ########.fr       */
+/*   Created: 2024/07/16 19:55:31 by ashahsaf          #+#    #+#             */
+/*   Updated: 2024/07/16 19:56:01 by ashahsaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_STR_H
-# define FT_STOCK_STR_H
-
-typedef struct s_stock_str
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-    int size;
-    char *str;
-    char *copy;
-} t_stock_str;
+	unsigned int	i;
+	unsigned int	res;
 
-#endif /* FT_STOCK_STR_H */
+	i = 0;
+	res = 0;
+	while (src[res])
+		res++;
+	if (size < 1)
+		return (res);
+	while (src[i] && i < size - 1)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (res);
+}
