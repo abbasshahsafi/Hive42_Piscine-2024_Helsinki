@@ -5,30 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ashahsaf <ashahsaf@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 22:38:00 by ashahsaf          #+#    #+#             */
-/*   Updated: 2024/07/16 22:38:27 by ashahsaf         ###   ########.fr       */
+/*   Created: 2024/07/15 20:36:07 by ashahsaf          #+#    #+#             */
+/*   Updated: 2024/07/15 20:36:27 by ashahsaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#define FT_BOOLEAN_H
 
-# include <unistd.h>
+#include <unistd.h> // for the write function
 
-typedef enum e_bool
-{
-	false = 0,
-	true = 1
-}	t_bool;
+typedef int t_bool;
 
-# define FALSE false
-# define TRUE true
+#define TRUE 1
+#define FALSE 0
+#define EVEN(n) ((n) % 2 == 0)
+#define SUCCESS 0
 
-t_bool	ft_is_even(int number);
+#define EVEN_MSG "I have an even number of arguments.\n"
+#define ODD_MSG "I have an odd number of arguments.\n"
 
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-
-# define SUCCESS 0
-
-#endif
+#endif // FT_BOOLEAN_H
